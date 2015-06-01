@@ -1,0 +1,70 @@
+@InProceedings{unevalizer2012,
+  author =	 {Simon Holm Jensen and Peter A. Jonsson and Anders
+                  M\o{}ller},
+  title =	 {Remedying the Eval that Men Do},
+  booktitle =	 {Proc. 21st International Symposium on Software
+                  Testing and Analysis (ISSTA)},
+  year =	 {2012},
+  month =	 {July},
+pdf = {papers/unevalizer2012.pdf},
+abstract = {A range of static analysis tools and techniques have been developed in recent years with the aim of helping JavaScript web application programmers produce code that is more robust, safe, and efficient. However, as shown in a previous large-scale study, many web applications use the JavaScript eval function to dynamically construct code from text strings in ways that obstruct existing static analyses. As a consequence, the analyses either fail to reason about the web applications or produce unsound or useless results. We present an approach to soundly and automatically transform many common uses of eval into other language constructs to enable sound static analysis of web applications. By eliminating calls to eval, we expand the applicability of static analysis for JavaScript web applications in general. The transformation we propose works by incorporating a refactoring technique into a dataflow analyzer. We report on our experimental results with a small collection of programming patterns extracted from popular web sites. Although there are inevitably cases where the transformation must give up, our technique succeeds in eliminating many nontrivial occurrences of eval.}
+}
+@Misc{stop2012,
+  author =	 {Esben Andreasen and Asger Feldthaus and Simon Holm
+                  Jensen and Casper S. Jensen and Peter A. Jonsson and
+                  Magnus Madsen and Anders M\o{}ller},
+  title =	 {Improving Tools for {J}ava{S}cript Programmers
+                  (Position Paper)},
+  year =	 {2012},
+  note =	 {International Workshop on Script to Program
+                  Evolution (STOP)},
+abstract = {We present an overview of three research projects that all aim to provide better tools for JavaScript web application programmers: TAJS, which infers static type information for JavaScript applications using dataflow analysis; JSRefactor, which enables sound code refactorings; and Artemis, which provides high-coverage automated testing.}
+}
+
+@InProceedings{dom2011,
+  author =       {Simon Holm Jensen and Magnus Madsen and Anders M\o{}ller},
+  title =        {Modeling the {HTML} {DOM} and Browser {API} in Static Analysis of {J}ava{S}cript Web Applications},
+  booktitle =    {Proc. 8th joint meeting of the European Software Engineering Conference
+                  and the ACM SIGSOFT Symposium on the Foundations of Software Engineering (ESEC/FSE)},
+  year =         {2011},
+  month =        {September},
+pdf = {papers/dom2011.pdf},
+abstract = {Developers of JavaScript web applications have little tool support for catching errors early in development. In comparison, an abundance of tools exist for statically typed languages, including sophisticated integrated development environments and specialized static analyses. Transferring such technologies to the domain of JavaScript web applications is challenging. In this paper, we discuss the challenges, which include the dynamic aspects of JavaScript and the complex interactions between JavaScript, HTML, and the browser. From this, we present the first static analysis that is capable of reasoning about the flow of control and data in modern JavaScript applications that interact with the HTML DOM and browser API. One application of such a static analysis is to detect type-related and dataflow-related programming errors. We report on experiments with a range of modern web applications, including Chrome Experiments and IE Test Drive applications, to measure the precision and performance of the technique. The experiments indicate that the analysis is able to show absence of errors related to missing object properties and to identify dead and unreachable code. By measuring the precision of the types inferred for object properties, the analysis is precise enough to show that most expressions have unique types. By also producing precise call graphs, the analysis additionally shows that most invocations in the programs are monomorphic. We furthermore study the usefulness of the analysis to detect spelling errors in the code. Despite the encouraging results, not all problems are solved and some of the experiments indicate a potential for improvement, which allows us to identify central remaining challenges and outline directions for future work.}
+}
+
+@InProceedings{artemis2011,
+  author =       {Shay Artzi and Julian Dolby and Simon Holm Jensen and
+                  Anders M\o{}ller and Frank Tip},
+  title =        {A Framework for Automated Testing of {J}ava{S}cript Web Applications},
+  booktitle =    {Proc. 33rd International Conference on Software Engineering (ICSE)},
+  year =         {2011},
+  month =        {May},
+pdf = {papers/artemis2011.pdf},
+abstract = {Current practice in testing JavaScript web applications requires manual construction of test cases, which is difficult and tedious. We present a framework for feedback-directed automated test generation for JavaScript in which execution is monitored to collect information that directs the test generator towards inputs that yield increased coverage. We implemented several instantiations of the framework, corresponding to variations on feedback-directed random testing, in a tool called Artemis. Experiments on a suite of JavaScript applications demonstrate that a simple instantiation of the framework that uses event handler registrations as feedback information produces surprisingly good coverage if enough tests are generated. By also using coverage information and read-write sets as feedback information, a slightly better level of coverage can be achieved, and sometimes with many fewer tests. The generated tests can be used for detecting HTML validity problems and other programming errors.}
+}
+
+@InProceedings{lazypropagation2010,
+  author =       {Simon Holm Jensen and Anders M\o{}ller and Peter Thiemann},
+  title =        {Interprocedural Analysis with Lazy Propagation},
+  booktitle =    {Proc. 17th International Static Analysis Symposium (SAS)},
+  year =         {2010},
+  month =        {September},
+  series =       {LNCS},
+  volume =       {6337},
+  publisher =    {Springer-Verlag},
+pdf = {papers/lazypropagation2010.pdf},
+abstract = {We propose lazy propagation as a technique for flow- and context-sensitive interprocedural analysis of programs with objects and first-class functions where transfer functions may not be distributive. The technique is described formally as a systematic modification of a variant of the monotone framework and its theoretical properties are shown. It is implemented in a type analysis tool for JavaScript where it results in a significant improvement in performance.}
+}
+
+@InProceedings{tajs2009,
+  author =       {Simon Holm Jensen and Anders M\o{}ller and Peter Thiemann},
+  title =        {Type Analysis for {J}ava{S}cript},
+  booktitle =    {Proc. 16th International Static Analysis Symposium (SAS)},
+  year =         {2009},
+  month =        {August},
+  series =       {LNCS},
+  volume =       {5673},
+  publisher =    {Springer-Verlag},
+pdf = {papers/tajs2009.pdf},
+abstract = {JavaScript is the main scripting language for Web browsers, and it is essential to modern Web applications. Programmers have started using it for writing complex applications, but there is still little tool support available during development. We present a static program analysis infrastructure that can infer detailed and sound type information for JavaScript programs using abstract interpretation. The analysis is designed to support the full language as defined in the ECMAScript standard, including its peculiar object model and all built-in functions. The analysis results can be used to detect common programming errors - or rather, prove their absence, and for producing type information for program comprehension. Preliminary experiments conducted on real-life JavaScript code indicate that the approach is promising regarding analysis precision on small and medium size programs, which constitute the majority of JavaScript applications. With potential for further improvement, we propose the analysis as a foundation for building tools that can aid JavaScript programmers.}
+}
